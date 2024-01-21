@@ -1,4 +1,3 @@
-// Write your JS code here
 import {Component} from 'react'
 import './index.css'
 
@@ -89,6 +88,14 @@ class RegistrationForm extends Component {
       isEmptyLastName,
     } = this.state
 
+    const firstNameInputStyle = isEmptyFirstName
+      ? 'error-first-name-style'
+      : 'non-error-input'
+
+    const lastNameInputStyle = isEmptyLastName
+      ? 'error-last-name-style'
+      : 'non-error-input'
+
     return (
       <form
         className="registration-form-container"
@@ -99,7 +106,7 @@ class RegistrationForm extends Component {
         </label>
         <input
           id="UserFirstName"
-          className="inputs-items"
+          className={firstNameInputStyle}
           type="text"
           placeholder="First name"
           value={userFirstName}
@@ -112,7 +119,7 @@ class RegistrationForm extends Component {
         </label>
         <input
           id="UserLastName"
-          className="inputs-items"
+          className={lastNameInputStyle}
           type="text"
           placeholder="Last name"
           value={userLastName}
